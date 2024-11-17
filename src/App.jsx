@@ -1,11 +1,22 @@
 import React from 'react';
-// import SideBar from './SideBar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SuggestedSchemes from "./SuggestedSchemes";
+
+import SideBar from './SideBar';
 import Component from './dashboard';
 function App() {
   return (
-      // <SideBar/>
-      <Component/>
+    <Router>
+      <SideBar/>
+      <Routes>
+      <Route path="/detailed-demographics" element={<Component />} />
+        <Route path="/suggested-schemes" element={<SuggestedSchemes />} />
+      </Routes>
+    </Router>
+    
+
   );
 }
 
 export default App;
+w
