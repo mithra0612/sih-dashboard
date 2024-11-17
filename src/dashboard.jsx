@@ -16,7 +16,6 @@ import LiteracyRate from "./Charts/LiteracyRate";
 import EmploymentStatus from "./Charts/EmploymentStatus";
 import GenderAge from "./Charts/GenderAge";
 import AgeCategories from "./Charts/AgeCategories";
-import CompareOccupations from "./Charts/CompareOccupations";
 import WorkerClassification from "./Charts/WorkerClassification";
 
 export default function Component() {
@@ -210,14 +209,14 @@ export default function Component() {
             <Occupation />
           </div>
           <div className="flex flex-row space-x-4">
-            <div className="block w-max	p-6 bg-white border rounded-lg shadow-lg">
+            <div className="block w-max bg-white border rounded-lg shadow-lg">
               <div className="p-6">
                 <div className="flex flex-col p-3">
                   <LiteracyRate />
                 </div>
               </div>
             </div>
-            <div class="block w-max	p-6 bg-white border rounded-lg shadow-lg">
+            <div class="block w-max bg-white border rounded-lg shadow-lg">
               <div className="flex-row">
                 <div className="flex flex-shrink">
                   <GenderAge />
@@ -226,7 +225,7 @@ export default function Component() {
             </div>
             <div class="block w-max	p-6 bg-white border rounded-lg shadow-lg">
               <div className="flex-row">
-                <div className="flex flex-shrink">
+                <div className="flex flex-grow-0">
                 <AgeCategories/>
                 </div>
               </div>
@@ -241,7 +240,7 @@ export default function Component() {
           </div>  
         </div>
         <div className="flex flex-row space-x-4 py-3">
-            <div className="block w-max	p-6 bg-white border rounded-lg shadow-lg">
+            <div className="block w-max	bg-white border rounded-lg shadow-lg">
               <div className="p-6">
                 <div className="flex flex-col p-3">
                   <EmploymentStatus />
@@ -261,10 +260,11 @@ export default function Component() {
                 </div>
               </div>
             </div>
+
             <div class="block w-fit p-6 bg-white border rounded-lg shadow-lg">
               <div className="flex-row">
                 <div className="flex flex-shrink">
-                  <AgeCategories/>
+                  <GenderAge/>
                 </div>
               </div>
             </div>

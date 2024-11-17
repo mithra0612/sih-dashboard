@@ -29,7 +29,7 @@ const options = {
   ],
   chart: {
     type: "bar",
-    width: "150%",
+    width: "130%",
     height: "320px",
     fontFamily: "Inter, sans-serif",
     toolbar: {

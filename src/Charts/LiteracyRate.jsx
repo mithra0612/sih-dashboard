@@ -7,7 +7,7 @@ const options = {
       colors: ["#0077B6", "#90E0EF"],
       chart: {
         height:250,
-        width: "100%",
+        width: "80%",
         type: "donut",
       },
       stroke: {

@@ -5,7 +5,7 @@ const options = {
   series: [64.23, 36.07],
   colors: ["#1C64F2", "#16BDCA"],
   chart: {
-    height: 300,
+    height: 250,
     width: "100%",
     type: "donut",
   },
