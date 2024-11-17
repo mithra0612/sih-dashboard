@@ -5,7 +5,7 @@ const options = {
   chart: {
     type: 'bar',
     height: '80%',
-    width:"110%",
+    width: "110%",
     toolbar: {
       show: false,
     },
@@ -14,15 +14,15 @@ const options = {
   series: [
     {
       name: 'Main Workers',
-      data: [1500, 3000, 2000, 500], 
+      data: [1500, 3000, 2000, 500], // Data for Cultivators, Agri Laborers, Household Industries, Other Workers
     },
     {
       name: 'Marginalized Workers',
-      data: [700, 1500, 1200, 300], 
+      data: [700, 1500, 1200, 300], // Data for Cultivators, Agri Laborers, Household Industries, Other Workers
     },
   ],
   xaxis: {
-    categories: ['Agriculture', 'Manufacturing', 'Services', 'Construction'], 
+    categories: ['Cultivators', 'Agricultural Laborers', 'Household Industries', 'Other Workers'], // Updated worker types
   },
   yaxis: {
     title: {
@@ -32,10 +32,12 @@ const options = {
   plotOptions: {
     bar: {
       horizontal: false,
-      columnWidth: '60%',
+      columnWidth: '50%',
+      borderRadiusApplication: "end",
+      borderRadius: 6,
     },
   },
-  colors: ['#1C64F2', '#E74694'],
+  colors: ['#1C64F2', '#E74694'], // Colors for Main Workers and Marginalized Workers
   legend: {
     position: 'top',
   },

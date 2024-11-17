@@ -8,6 +8,7 @@ import {
   Search,
   ShoppingCart,
   Users,
+  Pin
 } from "lucide-react";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
 import PopulationSpike from "./Charts/PopulationSpike";
@@ -17,6 +18,7 @@ import EmploymentStatus from "./Charts/EmploymentStatus";
 import GenderAge from "./Charts/GenderAge";
 import AgeCategories from "./Charts/AgeCategories";
 import WorkerClassification from "./Charts/WorkerClassification";
+import LiteracyPieChart from "./Charts/LiteracyPieChart";
 
 export default function Component() {
   const data = Array(12)
@@ -117,7 +119,7 @@ export default function Component() {
                       Nearest Post Office
                     </p>
                     <h3 className="text-xl font-bold text-cyan-800">
-                    India Post,Sathyamangalam
+                    IndiaPost,Sathyamangalam
                     </h3>
                   </div>
                 </div>
@@ -148,14 +150,12 @@ export default function Component() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   <div className="p-2 bg-orange-100 rounded-lg">
-                    <Users className="h-6 w-6 text-orange-600" />
+                    <Pin className="h-6 w-6 text-orange-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-muted-foreground text-orange-600">
-                      Data
-                    </p>
+                    
                     <h2 className="text-2xl font-bold text-orange-400">
-                      100000
+                      Sathyamangalam
                     </h2>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export default function Component() {
           <div className="lg:col-span-3 bg-white rounded-lg shadow-lg">
             <PopulationSpike />
           </div>
-          <div className="lg:col-span-2 bg-white rounded-lg shadow-lg">
+          {/* <div className="lg:col-span-2 bg-white rounded-lg shadow-lg">
             <div className="p-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg font-medium text-green-600">
@@ -204,28 +204,32 @@ export default function Component() {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="lg:col-span-2 bg-white rounded-lg shadow-lg">
-            <Occupation />
-          </div>
-          <div className="flex flex-row space-x-4">
-            <div className="block w-max bg-white border rounded-lg shadow-lg">
               <div className="p-6">
                 <div className="flex flex-col p-3">
-                  <LiteracyRate />
+                  <LiteracyPieChart />
                 </div>
               </div>
             </div>
-            <div class="block w-max bg-white border rounded-lg shadow-lg">
+          <div className="lg:col-span-2 bg-white rounded-lg shadow-lg">
+          <div className="p-6">
+          <div className="flex flex-col p-3">
+            <Occupation />
+            </div>
+            </div>
+          </div>
+          <div className="flex flex-row space-x-4">
+            <div class="block w-max bg-white border rounded-lg shadow-lg items-center justify-center">
               <div className="flex-row">
-                <div className="flex flex-shrink">
+                <div className="flex flex-shrink ">
                   <GenderAge />
                 </div>
               </div>
             </div>
             <div class="block w-max	p-6 bg-white border rounded-lg shadow-lg">
               <div className="flex-row">
-                <div className="flex flex-grow-0">
+                <div className="flex">
                 <AgeCategories/>
                 </div>
               </div>
@@ -237,38 +241,16 @@ export default function Component() {
                 </div>
               </div>
             </div>
+            <div class="block p-6 bg-white border rounded-lg shadow-lg">
+              <div className="flex-row">
+                <div className="flex flex-shrink">
+                    <EmploymentStatus/>
+                </div>
+              </div>
+            </div>
           </div>  
         </div>
-        <div className="flex flex-row space-x-4 py-3">
-            <div className="block w-max	bg-white border rounded-lg shadow-lg">
-              <div className="p-6">
-                <div className="flex flex-col p-3">
-                  <EmploymentStatus />
-                </div>
-              </div>
-            </div>
-            <div class="block w-fit	p-6 bg-white border rounded-lg shadow-lg">
-              <div className="flex-row">
-                <div className="flex flex-shrink">
-                </div>
-              </div>
-            </div>
-            <div class="block w-max	p-6 bg-white border rounded-lg shadow-lg">
-              <div className="flex-row">
-                <div className="flex flex-shrink">
-                <AgeCategories/>
-                </div>
-              </div>
-            </div>
-
-            <div class="block w-fit p-6 bg-white border rounded-lg shadow-lg">
-              <div className="flex-row">
-                <div className="flex flex-shrink">
-                  <GenderAge/>
-                </div>
-              </div>
-            </div>
-          </div>
+        
         
       </main>
     </div>

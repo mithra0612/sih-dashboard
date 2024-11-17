@@ -3,7 +3,7 @@ import ApexCharts from 'apexcharts';
 
 const options = {
   chart: {
-    height: 200,
+    height: 300,
     width: "100%",
     type: "area",
     fontFamily: "Poppins, sans-serif",

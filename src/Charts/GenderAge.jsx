@@ -6,32 +6,35 @@ const options = {
   series: [
     {
       name: "Female",
-      color: "#1A56DB",
+      color: "#c8a2c8",
       data: [
         { x: "0-6", y: 130 },
         { x: "7-14", y: 140 },
         { x: "15-25", y: 190 },
         { x: "26-40", y: 170 },
         { x: "41-55", y: 150 },
+        { x: "55+", y: 160 },
+
       ],
     },
     {
       name: "Male",
-      color: "#FDBA8C",
+      color: "#1A56DB",
       data: [
         { x: "0-6", y: 120 },
         { x: "7-14", y: 150 },
         { x: "15-25", y: 200 },
         { x: "26-40", y: 180 },
         { x: "41-55", y: 160 },
+        { x: "55+", y: 130 },
       ],
     },
   ],
   chart: {
     type: "bar",
     width: "130%",
-    height: "320px",
-    fontFamily: "Inter, sans-serif",
+    height: "350px",
+    fontFamily: "Poppins, sans-serif",
     toolbar: {
       show: false,
     },
@@ -41,14 +44,14 @@ const options = {
       horizontal: false,
       columnWidth: "60%",
       borderRadiusApplication: "end",
-      borderRadius: 6,
+      borderRadius: 10,
     },
   },
   tooltip: {
     shared: true,
     intersect: false,
     style: {
-      fontFamily: "Inter, sans-serif",
+      fontFamily: "Poppins, sans-serif",
     },
   },
   states: {
@@ -85,7 +88,7 @@ const options = {
     labels: {
       show: true,
       style: {
-        fontFamily: "Inter, sans-serif",
+        fontFamily: "Poppins, sans-serif",
         cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400",
       },
     },

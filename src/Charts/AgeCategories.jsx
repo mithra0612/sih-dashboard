@@ -5,12 +5,9 @@ const options = {
   series: [40, 60, 80, 25, 90, 55],
   colors: ["#1C64F2", "#1D9BF0", "#16BDCA", "#00D084", "#2DD4BF", "#38BDF8"],
   chart: {
-    height: "380px",
-    width: "90%",
+    height: 400,
+    width: "100%",
     type: "radialBar",
-    sparkline: {
-      enabled: true,
-    },
   },
   plotOptions: {
     radialBar: {
@@ -18,31 +15,42 @@ const options = {
         background: '#E5E7EB',
       },
       dataLabels: {
-        show: false,
+        show: true,
+        name: {
+          show: true,
+          fontSize: '16px',
+          fontFamily: 'Poppins, sans-serif',
+          color: '#333',
+          offsetY: 5,
+        },
+        value: {
+          show: true,
+          fontSize: '14px',
+          color: '#333',
+          offsetY: 5,
+          formatter: (val) => `${val}%`,
+        },
       },
       hollow: {
-        margin: 0,
-        size: "20%",
+        size: "30%",
       },
     },
   },
   grid: {
     show: false,
-    strokeDashArray: 4,
     padding: {
-      left: 2,
-      right: 2,
-      top: -23,
-      bottom: -20,
+      left: 10,
+      right: 10,
+      top: 20,
+      bottom: 20,
     },
   },
   labels: ["0-6", "7-14", "15-25", "26-40", "41-50", "55+"],
   legend: {
     show: true,
     position: "bottom",
-    horizontalAlign: "center",
     fontSize: "14px",
-    fontFamily: "Inter, sans-serif",
+    fontFamily: "Poppins, sans-serif",
     labels: {
       colors: "#333",
     },
@@ -52,7 +60,7 @@ const options = {
       radius: 4,
     },
     itemMargin: {
-      horizontal: 10,
+      horizontal: 5,
       vertical: 5,
     },
   },
@@ -68,7 +76,7 @@ const options = {
   },
 };
 
-export default function LiteracyEmploymentStatus() {
+export default function AgeCategories() {
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -87,12 +95,9 @@ export default function LiteracyEmploymentStatus() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col">
       <h2 className="text-xl font-bold text-blue-800">Age Distribution</h2>
       <div ref={chartRef} id="radial-chart"></div>
-      <p className="text-center text-gray-600 mt-2">
-        Age Groups: 0-6, 7-14, 15-25, 26-40, 41-50, 55+
-      </p>
     </div>
   );
 }
