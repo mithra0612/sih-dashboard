@@ -30,7 +30,7 @@ function SideBar() {
         </div>
 
         <div className="flex flex-row space-x-4 p-3">
-          <div className="flex items-center w-52 h-28 p-4 bg-white border rounded-lg shadow-lg">
+          <div className="flex items-center w-60 h-28 p-4 bg-white border rounded-lg shadow-lg">
             <div className="p-3 bg-blue-100 rounded-lg mr-3">
               <House className="h-6 w-6 text-blue-600" />
             </div>
@@ -41,7 +41,7 @@ function SideBar() {
           </div>
 
           {/* Household Count Tile */}
-          <div className="flex items-center w-52 h-28 p-4 bg-white border rounded-lg shadow-lg">
+          <div className="flex items-center w-60 h-28 p-4 bg-white border rounded-lg shadow-lg">
             <div className="p-3 bg-blue-100 rounded-lg mr-3">
               <House className="h-6 w-6 text-blue-600" />
             </div>
@@ -52,7 +52,7 @@ function SideBar() {
           </div>
 
           {/* Additional Tiles */}
-          <div className="flex items-center w-52 h-28 p-4 bg-white border rounded-lg shadow-lg">
+          <div className="flex items-center w-60 h-28 p-4 bg-white border rounded-lg shadow-lg">
             <div className="p-3 bg-blue-100 rounded-lg mr-3">
               <House className="h-6 w-6 text-blue-600" />
             </div>
@@ -61,7 +61,7 @@ function SideBar() {
               <p className="text-xl font-semibold text-gray-800">950/1000</p>
             </div>
           </div>
-          <div className="flex items-center w-52 h-28 p-4 bg-white border rounded-lg shadow-lg">
+          <div className="flex items-center w-60 h-28 p-4 bg-white border rounded-lg shadow-lg">
             <div className="p-3 bg-blue-100 rounded-lg mr-3">
               <House className="h-6 w-6 text-blue-600" />
             </div>
