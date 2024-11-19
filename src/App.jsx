@@ -3,20 +3,13 @@ import React from 'react';
 // import SuggestedSchemes from "./SuggestedSchemes";
 
 // import SideBar from './SideBar';
-import Component from './dashboard';
+// import Component from './dashboard';
+import SuccessRateChart from './Charts/SuccessRateChart';
 function App() {
   return (
-    // <Router>
-    //   <SideBar/>
-    //   <Routes>
-    //   <Route path="/detailed-demographics" element={<Component />} />
-    //     <Route path="/suggested-schemes" element={<SuggestedSchemes />} />
-    //   </Routes>
-    // </Router>
-    <Component/>
-    
-
-  );
+    // <Component/>
+    // <SuccessRateChart/>
+ );
 }
 
 export default App;
