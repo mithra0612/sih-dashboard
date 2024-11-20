@@ -5,11 +5,11 @@ const options = {
   chart: {
     type: 'bar',
     height: '80%',
-    width: "110%",
+    width: "100%",
     toolbar: {
       show: false,
     },
-    stacked: true, 
+    stacked: false, 
   },
   series: [
     {
@@ -32,9 +32,9 @@ const options = {
   plotOptions: {
     bar: {
       horizontal: false,
-      columnWidth: '50%',
+      columnWidth: '40%',
       borderRadiusApplication: "end",
-      borderRadius: 6,
+      borderRadius: 10,
     },
   },
   colors: ['#1C64F2', '#E74694'], // Colors for Main Workers and Marginalized Workers
@@ -76,7 +76,7 @@ export default function WorkerClassification() {
 
   return (
     <div className="flex-col items-center justify-between p-2">
-      <h2 className="text-xl font-semibold text-blue-800 mb-4 align-text">Type of Work</h2>
+      <h2 className="text-[18px] text-blue-800 mb-4 align-text">Type of Work</h2>
       <div ref={chartRef} id="bar-chart" style={{ height: '320px', width: '100%' }}></div>
     </div>
   );

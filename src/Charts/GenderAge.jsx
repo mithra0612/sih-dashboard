@@ -32,19 +32,21 @@ const options = {
   ],
   chart: {
     type: "bar",
-    width: "130%",
+    width: "100%",
     height: "350px",
     fontFamily: "Poppins, sans-serif",
     toolbar: {
       show: false,
     },
+    stacked: true, 
+
   },
   plotOptions: {
     bar: {
       horizontal: false,
-      columnWidth: "60%",
+      columnWidth: "40%",
       borderRadiusApplication: "end",
-      borderRadius: 10,
+      borderRadius: 4,
     },
   },
   tooltip: {
@@ -126,6 +128,7 @@ export default function GenderAge() {
 
   return (
     <div className="flex flex-col justify-center">
+            <h2 className="text-[18px] text-blue-800 mb-4 align-text">Gender-Age chart</h2>
       <div ref={chartRef} id="bar-chart"></div>
     </div>
   );

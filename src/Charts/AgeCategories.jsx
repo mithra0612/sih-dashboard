@@ -1,86 +1,85 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import ApexCharts from 'apexcharts';
 
 const options = {
-  series: [40, 60, 80, 25, 90, 55],
-  colors: ["#1C64F2", "#1D9BF0", "#16BDCA", "#00D084", "#2DD4BF", "#38BDF8"],
+  series: [12.5, 18.3, 24.2, 15.1, 14.7, 15.2], // Example population distribution data for each age group
+  colors: ["#00B4D8", "#0077B6", "#90E0EF", "#48CAE4", "#023E8A", "#1C64F2"], // Colors for each segment
   chart: {
-    height: 400,
+    height: 250,
     width: "100%",
-    type: "radialBar",
+    type: "donut",
+  },
+  stroke: {
+    colors: ["transparent"],
+    lineCap: "",
   },
   plotOptions: {
-    radialBar: {
-      track: {
-        background: '#E5E7EB',
-      },
-      dataLabels: {
-        show: true,
-        name: {
+    pie: {
+      donut: {
+        labels: {
           show: true,
-          fontSize: '16px',
-          fontFamily: 'Poppins, sans-serif',
-          color: '#333',
-          offsetY: 5,
+          name: {
+            show: true,
+            fontsize: "12px",
+            fontFamily: "Poppins, sans-serif",
+            offsetY: 20,
+          },
+          total: {
+            showAlways: true,
+            show: true,
+            label: "Age",
+            size:"18px",
+            fontFamily: "Poppins, sans-serif",
+          },
+          value: {
+            show: false,
+            fontFamily: "Poppins, sans-serif",
+          },
         },
-        value: {
-          show: true,
-          fontSize: '14px',
-          color: '#333',
-          offsetY: 5,
-          formatter: (val) => `${val}%`,
-        },
-      },
-      hollow: {
-        size: "30%",
+        size: "75%",
       },
     },
   },
   grid: {
-    show: false,
     padding: {
-      left: 10,
-      right: 10,
-      top: 20,
-      bottom: 20,
+      top: -2,
     },
   },
-  labels: ["0-6", "7-14", "15-25", "26-40", "41-50", "55+"],
+  labels: ["0-6", "7-14", "15-25", "25-40", "41-55", "55+"], // Age groups
+  dataLabels: {
+    enabled: false,
+  },
   legend: {
-    show: true,
     position: "bottom",
-    fontSize: "14px",
-    fontFamily: "Poppins, sans-serif",
-    labels: {
-      colors: "#333",
-    },
-    markers: {
-      width: 12,
-      height: 12,
-      radius: 4,
-    },
-    itemMargin: {
-      horizontal: 5,
-      vertical: 5,
-    },
-  },
-  tooltip: {
-    enabled: true,
-    theme: "dark",
-    y: {
-      formatter: (value) => `${value}%`,
-    },
+    fontFamily: "Inter, sans-serif",
   },
   yaxis: {
-    show: false,
+    labels: {
+      formatter: function (value) {
+        return value + "%";
+      },
+    },
+  },
+  xaxis: {
+    labels: {
+      formatter: function (value) {
+        return value + "%";
+      },
+    },
+    axisTicks: {
+      show: false,
+    },
+    axisBorder: {
+      show: false,
+    },
   },
 };
 
-export default function AgeCategories() {
+export default function AgeDistribution() {
   const chartRef = useRef(null);
 
   useEffect(() => {
-    let chart;
+    let chart; // Declare chart here for access in cleanup
 
     if (chartRef.current) {
       chart = new ApexCharts(chartRef.current, options);
@@ -95,9 +94,10 @@ export default function AgeCategories() {
   }, []);
 
   return (
-    <div className="flex flex-col">
-      <h2 className="text-xl font-bold text-blue-800">Age Distribution</h2>
-      <div ref={chartRef} id="radial-chart"></div>
+    <div className="flex flex-col justify-between">
+                  <h2 className="text-[18px] text-blue-800 mb-4 align-text">Age Distribution</h2>
+
+      <div ref={chartRef} id="donut-chart"></div>
     </div>
   );
 }

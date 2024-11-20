@@ -1,4 +1,3 @@
-// LiteracyChart.js
 import React, { useEffect } from "react";
 import ApexCharts from "apexcharts";
 
@@ -7,13 +6,20 @@ const getLiteracyChartOptions = () => {
     series: [45, 15, 30, 10],
     colors: ["#FF7F50", "#FFB6C1", "#9370DB", "#BA55D3"],
     chart: {
-      height: 300,
-      width: "100%",
+      height: 320, // Adjust height to match Occupation chart
+      width: "110%", // Maintain width 100% within container
       type: "pie",
     },
     stroke: {
       colors: ["white"],
       width: 3,
+    },
+    plotOptions: {
+      pie: {
+        dataLabels: {
+          offset: -25,
+        },
+      },
     },
     labels: ["Literate Men", "Illiterate Men", "Literate Women", "Illiterate Women"],
     dataLabels: {
@@ -42,9 +48,9 @@ export default function LiteracyPieChart() {
   }, []);
 
   return (
-    <div className="flex-col items-center">
-      <h2 className="text-xl font-bold text-blue-800 p-2">Literate/Illiterate Men and Women</h2>
-      <div id="literacy-chart"></div>
+    <div className="flex-col items-center p-4">
+      <h2 className="text-[18px] items-center text-blue-800 text-center">Literate/Illiterate Men and Women</h2>
+      <div id="literacy-chart" style={{ height: "320px", width: "100%" }}></div>
     </div>
   );
 }

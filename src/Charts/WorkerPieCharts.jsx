@@ -8,7 +8,7 @@ const getWorkingChartOptions = () => {
     colors: ["#023E8A", "#0077B6", "#00B4D8", "#48CAE4"],
     chart: {
       height: 300,
-      width: "100%",
+      width: "75%",
       type: "pie",
     },
     stroke: {
@@ -43,7 +43,7 @@ export default function WorkerPieChart() {
 
   return (
     <div className="flex-col items-center">
-      <h2 className="text-xl font-bold text-blue-800 p-2">Working/Non-Working Men and Women</h2>
+      <h2 className="text-[18px] text-blue-800 p-2">Working/Non-Working Men and Women</h2>
       <div id="working-chart"></div>
     </div>
   );

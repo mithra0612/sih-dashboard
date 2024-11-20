@@ -4,7 +4,7 @@ import ApexCharts from 'apexcharts';
 const options = {
   chart: {
     height: 300,
-    width: "100%",
+    width: 723,
     type: "area",
     fontFamily: "Poppins, sans-serif",
     dropShadow: {
@@ -88,7 +88,7 @@ export default function PopulationSpike() {
 
   return (
     <div className="flex-col items-center justify-between p-2">
-      <h2 className="text-xl font- text-blue-800">Expected Population Spike</h2>
+      <h2 className="text-[18px]  text-blue-800 mt-4">Expected Population Spike</h2>
         <div ref={chartRef} id="area-chart" ></div>
     </div>
   );

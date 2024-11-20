@@ -6,8 +6,8 @@ const getChartOptions = () => {
     series: [40, 25, 20, 15], // Data percentages for Cultivators, Agricultural Laborers, Household Industries, Other Workers
     colors: ["#023E8A", "#0077B6", "#00B4D8", "#48CAE4"], // Colors for each category
     chart: {
-      height: 300,
-      width: "100%",
+      height: 320, // Adjust height to match Literacy chart
+      width: "110%", // Set width to 100% for consistency
       type: "pie",
     },
     stroke: {
@@ -57,7 +57,7 @@ export default function Occupation() {
 
   return (
     <div className="flex-col items-center justify-between p-4">
-      <h2 className="text-xl font-semibold text-blue-800 p-2 text-center">Occupation Distribution</h2>
+      <h2 className="text-[18px] text-blue-800 text-center">Occupation Distribution</h2>
       <div id="pie-chart" style={{ height: "320px", width: "100%" }}></div>
     </div>
   );
