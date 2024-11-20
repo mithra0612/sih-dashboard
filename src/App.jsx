@@ -3,11 +3,11 @@ import React from 'react';
 // import SuggestedSchemes from "./SuggestedSchemes";
 
 // import SideBar from './SideBar';
-// import Component from './dashboard';
-import SuccessRateChart from './Charts/SuccessRateChart';
+import Component from './dashboard';
+// import SuccessRateChart from './Charts/SuccessRateChart';
 function App() {
   return (
-    // <Component/>
+    <Component/>
     // <SuccessRateChart/>
  );
 }
