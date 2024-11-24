@@ -1,0 +1,112 @@
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  
+  .form-checkbox {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .form-checkbox:hover {
+    transform: scale(1.1);
+  }
+  .form-checkbox:checked {
+    transform: scale(1.25);
+    animation: pulse 0.5s infinite alternate;
+    box-shadow: 0 0 10px rgba(56, 178, 172, 0.8);
+  }
+  
+  @keyframes pulse {
+    from {
+      box-shadow: 0 0 5px rgba(56, 178, 172, 0.6);
+    }
+    to {
+      box-shadow: 0 0 15px rgba(56, 178, 172, 1);
+    }
+  }
+  
+  /* Glow effect on hover */
+  /* Base Glow Effect on Hover */
+  /* Base Glow Effect on Hover */
+  .glow-hover {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4); /* Subtle gold glow */
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+  }
+  
+  .glow-hover:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 
+                0 0 30px rgba(255, 240, 180, 0.8); /* Enhanced golden glow */
+  }
+  
+  /* Vibrant Glow for Checked State */
+  .glow-checked {
+    box-shadow: 0 0 10px rgba(123, 104, 238, 0.6), 
+                0 0 20px rgba(147, 112, 219, 0.8); /* Soft lavender glow */
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+  }
+  
+  .glow-checked:checked {
+    background: linear-gradient(to bottom right, #7b68ee, #9370db, #dda0dd); /* Lavender gradient */
+    box-shadow: 0 0 25px rgba(123, 104, 238, 1), 
+                0 0 50px rgba(147, 112, 219, 0.9); /* Bright lavender glow */
+    transform: scale(1.2);
+  }
+  
+  /* Gradient Background for All States */
+  .gradient-transition {
+    background: linear-gradient(to bottom right, #f0e68c, #ffefd5, #fffacd); /* Soft pastel gradient */
+    transition: background 0.4s ease;
+  }
+  
+  .gradient-transition:checked {
+    background: linear-gradient(to bottom right, #9370db, #dda0dd, #e6e6fa); /* Lavender gradient */
+  }
+  
+  /* Checkbox Appearance */
+  .checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, #ffefd5, #fffacd); /* Pastel yellow gradient */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+  }
+  
+  .checkbox:checked {
+    background: linear-gradient(to bottom right, #7b68ee, #9370db); /* Checked lavender gradient */
+    box-shadow: 0 0 20px rgba(123, 104, 238, 0.8), 
+                0 0 40px rgba(147, 112, 219, 1);
+  }
+  
+  .checkbox:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  }
+  
+  .animate-popUp {
+    animation: popUp 0.3s ease-in-out;
+  }
+  
+  @keyframes popUp {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .glow-effect {
+    box-shadow: 0 0 10px rgba(128, 0, 255, 0.6), 0 0 20px rgba(128, 0, 255, 0.6), 0 0 30px rgba(128, 0, 255, 0.6), 0 0 15px rgba(0, 255, 255, 0.4), 0 0 25px rgba(0, 255, 255, 0.5);
+    border: 2px solid rgba(128, 0, 255, 0.6);
+  }
+  
