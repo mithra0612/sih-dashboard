@@ -5,8 +5,8 @@ const options = {
     series: [60,30,10],
     colors: ["#818cf7", "#a6b4fd","#c7d2ff"],
     chart: {
-      height: 320,
-      width: "90%",
+      height: 180,
+      width: "150%",
       type: "donut",
     },
     plotOptions: {
@@ -63,7 +63,7 @@ export default function SuccessRateChart() {
   }, []);
 
   return (
-    <div className="block w-max p-6 bg-white border rounded-lg shadow-lg flex flex-row ">
+    <div className="block w-max p-6 border rounded-lg shadow-md flex flex-row ">
         <div ref={chartRef} id="donut-chart" aria-label="Success Rate Donut Chart"></div>
         <div className="flex flex-col items-center">
         <h2 className="text-xl font-semibold text-purple-800 p-6 ">
