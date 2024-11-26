@@ -1,12 +1,14 @@
 import React from 'react';
 // import Component from './dashboard';
 // import SchemesPage from './SchemesPage'
-import Feedback from './Feedback'
+// import Feedback from './Feedback'
+import PublicInfo from './PublicInfo'
 function App() {
   return (
     // <Component/>
     // <SchemesPage/>
-    <Feedback/>
+    // <Feedback/>
+    <PublicInfo/>
  );
 }
 
