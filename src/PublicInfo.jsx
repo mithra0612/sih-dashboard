@@ -529,8 +529,8 @@ const PublicInfo = () => {
       <div className="p-4">
       <h2 className = "text-gray-800 text-2xl font-semibold p-4">Details</h2>
       <div className="max-h-[500px] overflow-y-auto">
-          <table className="min-w-full table-auto text-black">
-            <thead>
+          <table className="min-w-full h-96 table-auto text-black">
+          <thead className="sticky top-0 bg-white">
               <tr>
                 <th className="px-4 py-2">First Name</th>
                 <th className="px-4 py-2">Last Name</th>
@@ -546,8 +546,8 @@ const PublicInfo = () => {
             </thead>
             <tbody>
               {data.map((row) => (
-                <tr key={row.id}>
-                  <td className="px-4 py-2">{row.firstName}</td>
+                <tr key={row.id} className="hover:bg-blue-100 hover:text-blue-800">
+                <td className="px-4 py-2">{row.firstName}</td>
                   <td className="px-4 py-2">{row.lastName}</td>
                   <td className="px-4 py-2">{row.aadhaar}</td>
                   <td className="px-4 py-2">{row.gender}</td>
