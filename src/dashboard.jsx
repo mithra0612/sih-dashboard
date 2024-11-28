@@ -8,8 +8,6 @@ import {
 } from "lucide-react";
 import PopulationSpike from "./Charts/PopulationSpike";
 import Occupation from "./Charts/Occupation";
-import LiteracyRate from "./Charts/LiteracyRate";
-import EmploymentStatus from "./Charts/EmploymentStatus";
 import GenderAge from "./Charts/GenderAge";
 import AgeCategories from "./Charts/AgeCategories";
 import WorkerClassification from "./Charts/WorkerClassification";

@@ -1,20 +1,18 @@
-import React from "react";
+import { React, useState } from "react";
 import { LayoutGrid, Search } from "lucide-react";
 
 export const data = [
   {
     id: 1,
     firstName: "Rajesh",
-
     lastName: "Kumar",
     aadhaar: "1234-5678-9012",
     gender: "Male",
     dob: "1985-06-15",
     income: 450000,
-    scheme1: "Sukanya Samriddhi Yojana",
-    scheme2: "Senior Citizen Savings Scheme",
-    scheme3: "Post Office Recurring Deposit",
-    daysLeft: 120,
+    scheme1: { name: "Sukanya Samriddhi Yojana", daysLeft: 50 },
+    scheme2: { name: "Senior Citizen Savings Scheme", daysLeft: 100 },
+    scheme3: { name: "Post Office Recurring Deposit", daysLeft: 80 },
   },
   {
     id: 2,
@@ -24,10 +22,9 @@ export const data = [
     gender: "Female",
     dob: "1992-03-22",
     income: 300000,
-    scheme1: "Post Office Savings Account",
-    scheme2: "Public Provident Fund (PPF)",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 200,
+    scheme1: { name: "Post Office Savings Account", daysLeft: 200 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 180 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 160 },
   },
   {
     id: 3,
@@ -37,10 +34,9 @@ export const data = [
     gender: "Male",
     dob: "1975-11-09",
     income: 600000,
-    scheme1: "Kisan Vikas Patra",
-    scheme2: "Senior Citizen Savings Scheme",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 365,
+    scheme1: { name: "Kisan Vikas Patra", daysLeft: 40 },
+    scheme2: { name: "Senior Citizen Savings Scheme", daysLeft: 150 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 20 },
   },
   {
     id: 4,
@@ -50,10 +46,9 @@ export const data = [
     gender: "Female",
     dob: "1999-07-05",
     income: 250000,
-    scheme1: "Sukanya Samriddhi Yojana",
-    scheme2: "Post Office Time Deposit",
-    scheme3: "Public Provident Fund (PPF)",
-    daysLeft: 90,
+    scheme1: { name: "Sukanya Samriddhi Yojana", daysLeft: 50 },
+    scheme2: { name: "Post Office Time Deposit", daysLeft: 100 },
+    scheme3: { name: "Public Provident Fund (PPF)", daysLeft: 300 },
   },
   {
     id: 5,
@@ -63,10 +58,9 @@ export const data = [
     gender: "Male",
     dob: "1980-01-20",
     income: 500000,
-    scheme1: "Public Provident Fund (PPF)",
-    scheme2: "National Savings Certificate (NSC)",
-    scheme3: "Kisan Vikas Patra",
-    daysLeft: 150,
+    scheme1: { name: "Public Provident Fund (PPF)", daysLeft: 150 },
+    scheme2: { name: "National Savings Certificate (NSC)", daysLeft: 140 },
+    scheme3: { name: "Kisan Vikas Patra", daysLeft: 130 },
   },
   {
     id: 6,
@@ -76,10 +70,9 @@ export const data = [
     gender: "Female",
     dob: "1991-05-12",
     income: 350000,
-    scheme1: "Sukanya Samriddhi Yojana",
-    scheme2: "Senior Citizen Savings Scheme",
-    scheme3: "Post Office Time Deposit",
-    daysLeft: 300,
+    scheme1: { name: "Sukanya Samriddhi Yojana", daysLeft: 300 },
+    scheme2: { name: "Senior Citizen Savings Scheme", daysLeft: 290 },
+    scheme3: { name: "Post Office Time Deposit", daysLeft: 280 },
   },
   {
     id: 7,
@@ -89,10 +82,9 @@ export const data = [
     gender: "Male",
     dob: "1989-10-14",
     income: 400000,
-    scheme1: "Post Office Recurring Deposit",
-    scheme2: "Public Provident Fund (PPF)",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 220,
+    scheme1: { name: "Post Office Recurring Deposit", daysLeft: 100 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 25 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 15 },
   },
   {
     id: 8,
@@ -102,10 +94,9 @@ export const data = [
     gender: "Female",
     dob: "1995-02-22",
     income: 280000,
-    scheme1: "Post Office Savings Account",
-    scheme2: "Public Provident Fund (PPF)",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 450,
+    scheme1: { name: "Post Office Savings Account", daysLeft: 450 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 40 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 430 },
   },
   {
     id: 9,
@@ -115,10 +106,9 @@ export const data = [
     gender: "Male",
     dob: "1978-09-05",
     income: 650000,
-    scheme1: "Kisan Vikas Patra",
-    scheme2: "Post Office Recurring Deposit",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 110,
+    scheme1: { name: "Kisan Vikas Patra", daysLeft: 50 },
+    scheme2: { name: "Post Office Recurring Deposit", daysLeft: 400 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 30 },
   },
   {
     id: 10,
@@ -128,385 +118,278 @@ export const data = [
     gender: "Female",
     dob: "1988-06-10",
     income: 320000,
-    scheme1: "Sukanya Samriddhi Yojana",
-    scheme2: "Senior Citizen Savings Scheme",
-    scheme3: "Post Office Time Deposit",
-    daysLeft: 180,
+    scheme1: { name: "Sukanya Samriddhi Yojana", daysLeft: 180 },
+    scheme2: { name: "Senior Citizen Savings Scheme", daysLeft: 170 },
+    scheme3: { name: "Post Office Time Deposit", daysLeft: 160 },
   },
-  {
+    {
     id: 11,
-    firstName: "Harsh",
-    lastName: "Patel",
-    aadhaar: "1923-1234-6789",
+    firstName: "Arvind",
+    lastName: "Khan",
+    aadhaar: "3456-7890-2345",
     gender: "Male",
-    dob: "1990-03-18",
-    income: 420000,
-    scheme1: "Public Provident Fund (PPF)",
-    scheme2: "Kisan Vikas Patra",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 500,
+    dob: "1982-08-11",
+    income: 550000,
+    scheme1: { name: "Post Office Recurring Deposit", daysLeft: 130 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 120 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 110 },
   },
   {
     id: 12,
-    firstName: "Shruti",
-    lastName: "Sharma",
-    aadhaar: "9812-3456-7890",
+    firstName: "Richa",
+    lastName: "Malhotra",
+    aadhaar: "5678-1234-7890",
     gender: "Female",
-    dob: "1987-11-01",
-    income: 275000,
-    scheme1: "Senior Citizen Savings Scheme",
-    scheme2: "Post Office Recurring Deposit",
-    scheme3: "Sukanya Samriddhi Yojana",
-    daysLeft: 90,
+    dob: "1990-12-25",
+    income: 380000,
+    scheme1: { name: "Sukanya Samriddhi Yojana", daysLeft: 180 },
+    scheme2: { name: "Post Office Time Deposit", daysLeft: 160 },
+    scheme3: { name: "Senior Citizen Savings Scheme", daysLeft: 140 },
   },
   {
     id: 13,
-    firstName: "Manish",
-    lastName: "Singh",
-    aadhaar: "4321-5678-1234",
+    firstName: "Sunil",
+    lastName: "Patel",
+    aadhaar: "8765-4321-6543",
     gender: "Male",
-    dob: "1972-08-25",
-    income: 580000,
-    scheme1: "Post Office Time Deposit",
-    scheme2: "Kisan Vikas Patra",
-    scheme3: "Senior Citizen Savings Scheme",
-    daysLeft: 60,
+    dob: "1985-01-15",
+    income: 490000,
+    scheme1: { name: "Post Office Savings Account", daysLeft: 400 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 390 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 380 },
   },
   {
     id: 14,
-    firstName: "Rina",
-    lastName: "Das",
-    aadhaar: "5678-2345-9876",
+    firstName: "Sushma",
+    lastName: "Sharma",
+    aadhaar: "2345-8765-0987",
     gender: "Female",
-    dob: "1995-01-17",
-    income: 350000,
-    scheme1: "Public Provident Fund (PPF)",
-    scheme2: "Post Office Recurring Deposit",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 500,
+    dob: "1993-11-30",
+    income: 260000,
+    scheme1: { name: "Post Office Recurring Deposit", daysLeft: 270 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 260 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 250 },
   },
   {
     id: 15,
-    firstName: "Vinay",
-    lastName: "Rathore",
-    aadhaar: "8976-1234-5678",
+    firstName: "Anil",
+    lastName: "Jha",
+    aadhaar: "6543-1234-5678",
     gender: "Male",
-    dob: "1980-12-02",
-    income: 450000,
-    scheme1: "Kisan Vikas Patra",
-    scheme2: "Senior Citizen Savings Scheme",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 120,
+    dob: "1984-05-09",
+    income: 610000,
+    scheme1: { name: "Senior Citizen Savings Scheme", daysLeft: 30 },
+    scheme2: { name: "Sukanya Samriddhi Yojana", daysLeft: 25 },
+    scheme3: { name: "Post Office Time Deposit", daysLeft: 20 },
   },
   {
     id: 16,
-    firstName: "Surbhi",
-    lastName: "Jain",
-    aadhaar: "4321-9876-1234",
+    firstName: "Pooja",
+    lastName: "Singh",
+    aadhaar: "4321-5678-3456",
     gender: "Female",
-    dob: "1986-07-25",
+    dob: "1986-02-28",
     income: 290000,
-    scheme1: "Post Office Savings Account",
-    scheme2: "Sukanya Samriddhi Yojana",
-    scheme3: "Public Provident Fund (PPF)",
-    daysLeft: 150,
+    scheme1: { name: "Kisan Vikas Patra", daysLeft: 70 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 60 },
+    scheme3: { name: "Post Office Recurring Deposit", daysLeft: 50 },
   },
   {
     id: 17,
-    firstName: "Amit",
-    lastName: "Kumar",
-    aadhaar: "1357-2468-9753",
+    firstName: "Rajeev",
+    lastName: "Reddy",
+    aadhaar: "8765-3210-0987",
     gender: "Male",
-    dob: "1985-04-18",
-    income: 600000,
-    scheme1: "Post Office Recurring Deposit",
-    scheme2: "National Savings Certificate (NSC)",
-    scheme3: "Senior Citizen Savings Scheme",
-    daysLeft: 220,
+    dob: "1981-07-20",
+    income: 730000,
+    scheme1: { name: "National Savings Certificate (NSC)", daysLeft: 140 },
+    scheme2: { name: "Post Office Savings Account", daysLeft: 130 },
+    scheme3: { name: "Senior Citizen Savings Scheme", daysLeft: 120 },
   },
   {
     id: 18,
-    firstName: "Tanya",
-    lastName: "Chaudhary",
-    aadhaar: "7689-3456-1287",
+    firstName: "Jaspreet",
+    lastName: "Kaur",
+    aadhaar: "2341-5678-9087",
     gender: "Female",
-    dob: "1993-10-28",
-    income: 310000,
-    scheme1: "Sukanya Samriddhi Yojana",
-    scheme2: "Post Office Savings Account",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 200,
+    dob: "1992-04-01",
+    income: 320000,
+    scheme1: { name: "Sukanya Samriddhi Yojana", daysLeft: 110 },
+    scheme2: { name: "Kisan Vikas Patra", daysLeft: 100 },
+    scheme3: { name: "Public Provident Fund (PPF)", daysLeft: 90 },
   },
   {
     id: 19,
-    firstName: "Abhinav",
-    lastName: "Mittal",
-    aadhaar: "9087-6543-2101",
+    firstName: "Vijay",
+    lastName: "Yadav",
+    aadhaar: "5432-8765-3456",
     gender: "Male",
-    dob: "1990-08-03",
-    income: 520000,
-    scheme1: "Kisan Vikas Patra",
-    scheme2: "Senior Citizen Savings Scheme",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 350,
+    dob: "1987-01-17",
+    income: 420000,
+    scheme1: { name: "Post Office Time Deposit", daysLeft: 60 },
+    scheme2: { name: "Sukanya Samriddhi Yojana", daysLeft: 50 },
+    scheme3: { name: "Public Provident Fund (PPF)", daysLeft: 40 },
   },
   {
     id: 20,
-    firstName: "Nikita",
-    lastName: "Verma",
-    aadhaar: "4567-1234-9876",
-    gender: "Female",
-    dob: "1994-11-11",
-    income: 275000,
-    scheme1: "Public Provident Fund (PPF)",
-    scheme2: "Post Office Time Deposit",
-    scheme3: "Kisan Vikas Patra",
-    daysLeft: 120,
+    firstName: "Alok",
+    lastName: "Bansal",
+    aadhaar: "6789-1234-2345",
+    gender: "Male",
+    dob: "1990-10-03",
+    income: 490000,
+    scheme1: { name: "National Savings Certificate (NSC)", daysLeft: 35 },
+    scheme2: { name: "Senior Citizen Savings Scheme", daysLeft: 25 },
+    scheme3: { name: "Post Office Savings Account", daysLeft: 15 },
   },
   {
     id: 21,
-    firstName: "Karan",
-    lastName: "Rai",
-    aadhaar: "9087-1234-5678",
-    gender: "Male",
-    dob: "1987-02-10",
-    income: 400000,
-    scheme1: "National Savings Certificate (NSC)",
-    scheme2: "Post Office Recurring Deposit",
-    scheme3: "Public Provident Fund (PPF)",
-    daysLeft: 330,
+    firstName: "Kriti",
+    lastName: "Verma",
+    aadhaar: "8901-2345-6789",
+    gender: "Female",
+    dob: "1998-05-15",
+    income: 270000,
+    scheme1: { name: "Post Office Recurring Deposit", daysLeft: 300 },
+    scheme2: { name: "Sukanya Samriddhi Yojana", daysLeft: 290 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 280 },
   },
   {
     id: 22,
-    firstName: "Priya",
-    lastName: "Bansal",
-    aadhaar: "3478-6798-1283",
-    gender: "Female",
-    dob: "1992-07-18",
-    income: 320000,
-    scheme1: "Post Office Savings Account",
-    scheme2: "Sukanya Samriddhi Yojana",
-    scheme3: "Kisan Vikas Patra",
-    daysLeft: 290,
+    firstName: "Anil",
+    lastName: "Kumar",
+    aadhaar: "3456-7890-4321",
+    gender: "Male",
+    dob: "1989-02-08",
+    income: 620000,
+    scheme1: { name: "Public Provident Fund (PPF)", daysLeft: 250 },
+    scheme2: { name: "National Savings Certificate (NSC)", daysLeft: 240 },
+    scheme3: { name: "Post Office Recurring Deposit", daysLeft: 230 },
   },
   {
     id: 23,
-    firstName: "Chirag",
-    lastName: "Sharma",
-    aadhaar: "1234-5678-6789",
-    gender: "Male",
-    dob: "1984-05-25",
-    income: 700000,
-    scheme1: "Post Office Recurring Deposit",
-    scheme2: "National Savings Certificate (NSC)",
-    scheme3: "Senior Citizen Savings Scheme",
-    daysLeft: 450,
+    firstName: "Divya",
+    lastName: "Mehta",
+    aadhaar: "2345-6789-4321",
+    gender: "Female",
+    dob: "1994-11-19",
+    income: 310000,
+    scheme1: { name: "Post Office Savings Account", daysLeft: 380 },
+    scheme2: { name: "Sukanya Samriddhi Yojana", daysLeft: 370 },
+    scheme3: { name: "Public Provident Fund (PPF)", daysLeft: 360 },
   },
   {
     id: 24,
-    firstName: "Aisha",
-    lastName: "Siddiqui",
-    aadhaar: "4321-8765-3456",
-    gender: "Female",
-    dob: "1988-12-16",
-    income: 400000,
-    scheme1: "Public Provident Fund (PPF)",
-    scheme2: "Kisan Vikas Patra",
-    scheme3: "Post Office Time Deposit",
-    daysLeft: 80,
+    firstName: "Harish",
+    lastName: "Nair",
+    aadhaar: "6789-4321-8765",
+    gender: "Male",
+    dob: "1983-09-29",
+    income: 540000,
+    scheme1: { name: "Senior Citizen Savings Scheme", daysLeft: 90 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 80 },
+    scheme3: { name: "Post Office Recurring Deposit", daysLeft: 70 },
   },
   {
     id: 25,
-    firstName: "Sandeep",
-    lastName: "Singh",
-    aadhaar: "9876-5432-1123",
-    gender: "Male",
-    dob: "1996-04-02",
-    income: 450000,
-    scheme1: "Post Office Savings Account",
-    scheme2: "Public Provident Fund (PPF)",
-    scheme3: "Senior Citizen Savings Scheme",
-    daysLeft: 120,
+    firstName: "Sonia",
+    lastName: "Chopra",
+    aadhaar: "2345-8765-7654",
+    gender: "Female",
+    dob: "1991-01-10",
+    income: 430000,
+    scheme1: { name: "Kisan Vikas Patra", daysLeft: 210 },
+    scheme2: { name: "Post Office Time Deposit", daysLeft: 200 },
+    scheme3: { name: "Public Provident Fund (PPF)", daysLeft: 190 },
   },
   {
     id: 26,
-    firstName: "Pooja",
-    lastName: "Kumari",
-    aadhaar: "5432-6789-0123",
-    gender: "Female",
-    dob: "1990-01-22",
-    income: 500000,
-    scheme1: "Sukanya Samriddhi Yojana",
-    scheme2: "Post Office Recurring Deposit",
-    scheme3: "Public Provident Fund (PPF)",
-    daysLeft: 200,
+    firstName: "Rajeev",
+    lastName: "Singh",
+    aadhaar: "5432-2345-1234",
+    gender: "Male",
+    dob: "1990-03-12",
+    income: 560000,
+    scheme1: { name: "Post Office Savings Account", daysLeft: 130 },
+    scheme2: { name: "Senior Citizen Savings Scheme", daysLeft: 120 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 110 },
   },
   {
     id: 27,
-    firstName: "Amit",
-    lastName: "Garg",
-    aadhaar: "3467-8910-5432",
-    gender: "Male",
-    dob: "1989-09-12",
-    income: 600000,
-    scheme1: "Kisan Vikas Patra",
-    scheme2: "Post Office Savings Account",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 450,
+    firstName: "Simran",
+    lastName: "Kaur",
+    aadhaar: "8765-4321-7654",
+    gender: "Female",
+    dob: "1992-06-18",
+    income: 310000,
+    scheme1: { name: "Post Office Recurring Deposit", daysLeft: 180 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 170 },
+    scheme3: { name: "Sukanya Samriddhi Yojana", daysLeft: 160 },
   },
   {
     id: 28,
-    firstName: "Isha",
-    lastName: "Khanna",
-    aadhaar: "2093-7284-8901",
-    gender: "Female",
-    dob: "1984-04-30",
-    income: 275000,
-    scheme1: "Public Provident Fund (PPF)",
-    scheme2: "National Savings Certificate (NSC)",
-    scheme3: "Senior Citizen Savings Scheme",
-    daysLeft: 350,
+    firstName: "Vishal",
+    lastName: "Chauhan",
+    aadhaar: "7890-1234-5678",
+    gender: "Male",
+    dob: "1984-11-07",
+    income: 620000,
+    scheme1: { name: "National Savings Certificate (NSC)", daysLeft: 60 },
+    scheme2: { name: "Kisan Vikas Patra", daysLeft: 50 },
+    scheme3: { name: "Senior Citizen Savings Scheme", daysLeft: 40 },
   },
   {
     id: 29,
-    firstName: "Rohit",
-    lastName: "Mehta",
-    aadhaar: "5678-1234-6789",
-    gender: "Male",
-    dob: "1982-06-19",
-    income: 700000,
-    scheme1: "Senior Citizen Savings Scheme",
-    scheme2: "National Savings Certificate (NSC)",
-    scheme3: "Post Office Recurring Deposit",
-    daysLeft: 120,
+    firstName: "Shivani",
+    lastName: "Verma",
+    aadhaar: "2345-5678-2345",
+    gender: "Female",
+    dob: "1996-12-09",
+    income: 320000,
+    scheme1: { name: "Post Office Time Deposit", daysLeft: 110 },
+    scheme2: { name: "Kisan Vikas Patra", daysLeft: 100 },
+    scheme3: { name: "National Savings Certificate (NSC)", daysLeft: 90 },
   },
   {
     id: 30,
-    firstName: "Shubhi",
-    lastName: "Verma",
-    aadhaar: "5678-9012-1234",
-    gender: "Female",
-    dob: "1987-02-14",
-    income: 320000,
-    scheme1: "Sukanya Samriddhi Yojana",
-    scheme2: "National Savings Certificate (NSC)",
-    scheme3: "Public Provident Fund (PPF)",
-    daysLeft: 150,
-  },
-  {
-    id: 31,
-    firstName: "Vishal",
-    lastName: "Sharma",
-    aadhaar: "1234-8765-4321",
+    firstName: "Mukesh",
+    lastName: "Yadav",
+    aadhaar: "6789-2345-1234",
     gender: "Male",
-    dob: "1990-11-07",
+    dob: "1983-06-05",
     income: 550000,
-    scheme1: "Public Provident Fund (PPF)",
-    scheme2: "Kisan Vikas Patra",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 130,
+    scheme1: { name: "Post Office Recurring Deposit", daysLeft: 160 },
+    scheme2: { name: "Public Provident Fund (PPF)", daysLeft: 150 },
+    scheme3: { name: "Sukanya Samriddhi Yojana", daysLeft: 140 },
   },
-  {
-    id: 32,
-    firstName: "Sneha",
-    lastName: "Desai",
-    aadhaar: "9876-4321-7654",
-    gender: "Female",
-    dob: "1993-07-05",
-    income: 400000,
-    scheme1: "Public Provident Fund (PPF)",
-    scheme2: "Post Office Savings Account",
-    scheme3: "Sukanya Samriddhi Yojana",
-    daysLeft: 290,
-  },
-  {
-    id: 33,
-    firstName: "Sandeep",
-    lastName: "Gupta",
-    aadhaar: "2345-6789-3421",
-    gender: "Male",
-    dob: "1995-12-21",
-    income: 380000,
-    scheme1: "Senior Citizen Savings Scheme",
-    scheme2: "National Savings Certificate (NSC)",
-    scheme3: "Public Provident Fund (PPF)",
-    daysLeft: 180,
-  },
-  {
-    id: 34,
-    firstName: "Simran",
-    lastName: "Singh",
-    aadhaar: "1234-5678-2468",
-    gender: "Female",
-    dob: "1987-01-30",
-    income: 400000,
-    scheme1: "Post Office Recurring Deposit",
-    scheme2: "Senior Citizen Savings Scheme",
-    scheme3: "Kisan Vikas Patra",
-    daysLeft: 250,
-  },
-  {
-    id: 35,
-    firstName: "Manoj",
-    lastName: "Soni",
-    aadhaar: "6789-4321-5643",
-    gender: "Male",
-    dob: "1983-08-18",
-    income: 600000,
-    scheme1: "Post Office Recurring Deposit",
-    scheme2: "Kisan Vikas Patra",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 400,
-  },
-  {
-    id: 36,
-    firstName: "Rajeev",
-    lastName: "Saxena",
-    aadhaar: "4567-8901-2345",
-    gender: "Male",
-    dob: "1980-04-16",
-    income: 520000,
-    scheme1: "Post Office Savings Account",
-    scheme2: "Public Provident Fund (PPF)",
-    scheme3: "National Savings Certificate (NSC)",
-    daysLeft: 310,
-  },
-  {
-    id: 37,
-    firstName: "Ritika",
-    lastName: "Agarwal",
-    aadhaar: "1234-5678-8901",
-    gender: "Female",
-    dob: "1995-06-09",
-    income: 330000,
-    scheme1: "Kisan Vikas Patra",
-    scheme2: "Public Provident Fund (PPF)",
-    scheme3: "Post Office Recurring Deposit",
-    daysLeft: 450,
-  },
-  {
-    id: 38,
-    firstName: "Anil",
-    lastName: "Kumar",
-    aadhaar: "9087-6543-5678",
-    gender: "Male",
-    dob: "1976-09-05",
-    income: 600000,
-    scheme1: "National Savings Certificate (NSC)",
-    scheme2: "Post Office Time Deposit",
-    scheme3: "Kisan Vikas Patra",
-    daysLeft: 250,
-  },
+
 ];
 
 
 const PublicInfo = () => {
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortedData, setSortedData] = useState([...data]);
+  
+  // Function to handle sorting by the selected scheme
+  const handleSort = (scheme) => {
+    const newSortOrder = sortOrder === "asc" ? "desc" : "asc";
+    
+    const sorted = [...sortedData].sort((a, b) => {
+      // Use the specific scheme's daysLeft for sorting
+      const aDaysLeft = a[scheme]?.daysLeft || 0; // Default to 0 if the scheme doesn't exist
+      const bDaysLeft = b[scheme]?.daysLeft || 0;
+      
+      return newSortOrder === "asc" ? aDaysLeft - bDaysLeft : bDaysLeft - aDaysLeft;
+    });
+    
+    setSortOrder(newSortOrder);
+    setSortedData(sorted);
+  };
   return (
     <div className="w-screen h-screen bg-[#f2f7fb]">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center justify-between px-4 md:px-6">
           <button className="flex items-center space-x-1 bg-white text-black shadow-md">
-            <LayoutGrid className="h-4 w-4" />
             <span className="text-sm font-medium">Dashboard</span>
           </button>
           <form className="flex w-full max-w-sm items-center space-x-2">
@@ -519,44 +402,110 @@ const PublicInfo = () => {
               type="submit"
               className="flex items-center px-3 bg-white text-black shadow-md"
             >
-              <Search className="h-4 w-4" />
+              Search
             </button>
           </form>
         </div>
       </header>
-
-
-      <div className="p-4">
-      <h2 className = "text-gray-800 text-2xl font-semibold p-4">Details</h2>
-      <div className="max-h-[500px] overflow-y-auto">
-          <table className="min-w-full h-96 table-auto text-black">
-          <thead className="sticky top-0 bg-white">
+  
+      <div className="p-5">
+        <h2 className="text-gray-800 text-2xl font-semibold p-4">Details</h2>
+        <div className="max-h-[540px] overflow-x-auto">
+          <table className="table-auto text-gray-900 border-separate border-spacing-0 border-1 bg-white min-w-full border-b">
+            <thead className="sticky top-0 bg-slate-100 text-blue-900 rounded-md">
               <tr>
-                <th className="px-4 py-2">First Name</th>
-                <th className="px-4 py-2">Last Name</th>
-                <th className="px-4 py-2">Aadhaar</th>
-                <th className="px-4 py-2">Gender</th>
-                <th className="px-4 py-2">DOB</th>
-                <th className="px-4 py-2">Income</th>
-                <th className="px-4 py-2">Scheme 1</th>
-                <th className="px-4 py-2">Scheme 2</th>
-                <th className="px-4 py-2">Scheme 3</th>
-                <th className="px-4 py-2">Days Left</th>
+                <th className="px-4 py-2 whitespace-nowrap">First Name</th>
+                <th className="px-4 py-2 whitespace-nowrap">Last Name</th>
+                <th className="px-4 py-2 whitespace-nowrap">Aadhaar</th>
+                <th className="px-4 py-2 whitespace-nowrap">Gender</th>
+                <th className="px-4 py-2 whitespace-nowrap">DOB</th>
+                <th className="px-4 py-2 whitespace-nowrap">Income</th>
+
+                {/* Scheme 1 Column */}
+                <th className="px-4 py-2 whitespace-nowrap">Scheme 1</th>
+                <th
+                  className="px-4 py-2 whitespace-nowrap cursor-pointer"
+                  onClick={() => handleSort("scheme1")}
+                >
+                  Days Left {sortOrder === "asc" ? "⬆" : "⬇"}
+                </th>
+
+                {/* Scheme 2 Column */}
+                <th className="px-4 py-2 whitespace-nowrap">Scheme 2</th>
+                <th
+                  className="px-4 py-2 whitespace-nowrap cursor-pointer"
+                  onClick={() => handleSort("scheme2")}
+                >
+                  Days Left {sortOrder === "asc" ? "⬆" : "⬇"}
+                </th>
+
+                {/* Scheme 3 Column */}
+                <th className="px-4 py-2 whitespace-nowrap">Scheme 3</th>
+                <th
+                  className="px-4 py-2 whitespace-nowrap cursor-pointer"
+                  onClick={() => handleSort("scheme3")}
+                >
+                  Days Left {sortOrder === "asc" ? "⬆" : "⬇"}
+                </th>
               </tr>
             </thead>
-            <tbody>
-              {data.map((row) => (
-                <tr key={row.id} className="hover:bg-blue-100 hover:text-blue-800">
-                <td className="px-4 py-2">{row.firstName}</td>
-                  <td className="px-4 py-2">{row.lastName}</td>
-                  <td className="px-4 py-2">{row.aadhaar}</td>
-                  <td className="px-4 py-2">{row.gender}</td>
-                  <td className="px-4 py-2">{row.dob}</td>
-                  <td className="px-4 py-2">{row.income}</td>
-                  <td className="px-4 py-2">{row.scheme1}</td>
-                  <td className="px-4 py-2">{row.scheme2}</td>
-                  <td className="px-4 py-2">{row.scheme3}</td>
-                  <td className="px-4 py-2">{row.daysLeft}</td>
+            <tbody className="text-[13px]">
+              {sortedData.map((row) => (
+                <tr key={row.id} className="hover:bg-blue-50 hover:text-blue-800">
+                  <td className="px-4 py-3 whitespace-nowrap">{row.firstName}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{row.lastName}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{row.aadhaar}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{row.gender}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{row.dob}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{row.income}</td>
+
+                  {/* Scheme 1 Days Left */}
+                  <td className="px-4 py-3 whitespace-nowrap">{row.scheme1.name}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                        row.scheme1.daysLeft < 80
+                          ? "text-red-700"
+                          : row.scheme1.daysLeft < 150
+                          ? "text-yellow-600"
+                          : "text-green-700"
+                      }`}
+                    >
+                      {row.scheme1.daysLeft}
+                    </span>
+                  </td>
+
+                  {/* Scheme 2 Days Left */}
+                  <td className="px-4 py-3 whitespace-nowrap">{row.scheme2.name}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                        row.scheme2.daysLeft < 80
+                          ? "text-red-700"
+                          : row.scheme2.daysLeft < 150
+                          ? "text-yellow-600"
+                          : "text-green-700"
+                      }`}
+                    >
+                      {row.scheme2.daysLeft}
+                    </span>
+                  </td>
+
+                  {/* Scheme 3 Days Left */}
+                  <td className="px-4 py-3 whitespace-nowrap">{row.scheme3.name}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <span
+                      className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                        row.scheme3.daysLeft < 80
+                          ? "text-red-700"
+                          : row.scheme3.daysLeft < 150
+                          ? "text-yellow-600"
+                          : "text-green-700"
+                      }`}
+                    >
+                      {row.scheme3.daysLeft}
+                    </span>
+                  </td>
                 </tr>
               ))}
             </tbody>
