@@ -411,8 +411,8 @@ const PublicInfo = () => {
       <div className="p-5">
         <h2 className="text-gray-800 text-2xl font-semibold p-4">Details</h2>
         <div className="max-h-[540px] overflow-x-auto">
-          <table className="table-auto text-gray-900 border-separate border-spacing-0 border-1 bg-white min-w-full border-b">
-            <thead className="sticky top-0 bg-slate-100 text-blue-900 rounded-md">
+        <table className="table-auto text-gray-900 border-separate border-spacing-0 border border-gray-300 bg-white min-w-full">
+        <thead className="sticky top-0 bg-slate-100 text-blue-900 rounded-md">
               <tr>
                 <th className="px-4 py-2 whitespace-nowrap">First Name</th>
                 <th className="px-4 py-2 whitespace-nowrap">Last Name</th>
@@ -452,16 +452,16 @@ const PublicInfo = () => {
             <tbody className="text-[13px]">
               {sortedData.map((row) => (
                 <tr key={row.id} className="hover:bg-blue-50 hover:text-blue-800">
-                  <td className="px-4 py-3 whitespace-nowrap">{row.firstName}</td>
-                  <td className="px-4 py-3 whitespace-nowrap">{row.lastName}</td>
-                  <td className="px-4 py-3 whitespace-nowrap">{row.aadhaar}</td>
-                  <td className="px-4 py-3 whitespace-nowrap">{row.gender}</td>
-                  <td className="px-4 py-3 whitespace-nowrap">{row.dob}</td>
-                  <td className="px-4 py-3 whitespace-nowrap">{row.income}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.firstName}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.lastName}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.aadhaar}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.gender}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.dob}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.income}</td>
 
                   {/* Scheme 1 Days Left */}
-                  <td className="px-4 py-3 whitespace-nowrap">{row.scheme1.name}</td>
-                  <td className="px-4 py-3 whitespace-nowrap">
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.scheme1.name}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-semibold ${
                         row.scheme1.daysLeft < 80
@@ -476,8 +476,8 @@ const PublicInfo = () => {
                   </td>
 
                   {/* Scheme 2 Days Left */}
-                  <td className="px-4 py-3 whitespace-nowrap">{row.scheme2.name}</td>
-                  <td className="px-4 py-3 whitespace-nowrap">
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.scheme2.name}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300" border border-gray-300>
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-semibold ${
                         row.scheme2.daysLeft < 80
@@ -492,8 +492,8 @@ const PublicInfo = () => {
                   </td>
 
                   {/* Scheme 3 Days Left */}
-                  <td className="px-4 py-3 whitespace-nowrap">{row.scheme3.name}</td>
-                  <td className="px-4 py-3 whitespace-nowrap">
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">{row.scheme3.name}</td>
+                  <td className="px-4 py-3 whitespace-nowrap border border-gray-300">
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-semibold ${
                         row.scheme3.daysLeft < 80
