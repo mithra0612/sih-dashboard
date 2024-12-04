@@ -1,15 +1,19 @@
-import React from 'react';
+import React from "react";
 // import Component from './dashboard';
-// import SchemesPage from './SchemesPage'
-// import Feedback from './Feedback'
-import PublicInfo from './PublicInfo'
+import SchemesPage from "./schemeTime/SchemesPage";
+// import Feedback from "./schemeTime/Feedback";
+// import Filter from "./assets/filter";
+import PublicInfo from "./PublicInfo";
 function App() {
   return (
-    // <Component/>
-    // <SchemesPage/>
-    // <Feedback/>
-    <PublicInfo/>
- );
+    <div className="div">
+      {/* <Component /> */}
+      <SchemesPage />
+      {/* <Feedback /> */}
+      {/* <PublicInfo /> */}
+      {/* <Filter /> */}
+    </div>
+  );
 }
 
 export default App;
