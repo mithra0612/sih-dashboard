@@ -2,6 +2,7 @@ import React from "react";
 import { LayoutGrid, Search } from "lucide-react"; // Replace with the correct library
 import SuccessRateChart from "./Charts/SuccessRateChart";
 import Location from "./Location";
+
 export default function SchemesPage() {
   return (
     <div>
@@ -49,15 +50,7 @@ export default function SchemesPage() {
                     <tr>
                       <th scope="col" className="p-4">
                         <div className="flex items-center">
-                          {/* <input
-                          id="radio-all-search"
-                          type="radio"
-                          name="select-product" 
-                          className="w-4 h-4 text-[#6366f1] bg-gray-100 border-gray-300 rounded focus:ring-[#6366f1] focus:ring-2"
-                        /> */}
-                          {/* <label htmlFor="radio-all-search" className="sr-only">
-                          radio button
-                        </label> */}
+                          {/* Optional radio button */}
                         </div>
                       </th>
                       <th scope="col" className="px-6 py-3">
@@ -107,13 +100,13 @@ export default function SchemesPage() {
                       <td className="w-4 p-4">
                         <div className="flex items-center">
                           <input
-                            id="radio-table-search-1"
+                            id="radio-table-search-2"
                             type="radio"
-                            name="select-product" // Same name as other radio buttons
+                            name="select-product"
                             className="w-4 h-4 text-[#6366f1] bg-gray-100 border-gray-300 rounded focus:ring-[#6366f1] focus:ring-2"
                           />
                           <label
-                            htmlFor="radio-table-search-1"
+                            htmlFor="radio-table-search-2"
                             className="sr-only"
                           >
                             radio button
@@ -136,13 +129,13 @@ export default function SchemesPage() {
                       <td className="w-4 p-4">
                         <div className="flex items-center">
                           <input
-                            id="radio-table-search-1"
+                            id="radio-table-search-3"
                             type="radio"
-                            name="select-product" // Same name as other radio buttons
+                            name="select-product"
                             className="w-4 h-4 text-[#6366f1] bg-gray-100 border-gray-300 rounded focus:ring-[#6366f1] focus:ring-2"
                           />
                           <label
-                            htmlFor="radio-table-search-1"
+                            htmlFor="radio-table-search-3"
                             className="sr-only"
                           >
                             radio button
