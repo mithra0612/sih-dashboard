@@ -102,7 +102,6 @@ export default function SchemesPage() {
                       <td className="px-6 py-4">
                         Encourage savings with easy access to banking
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -132,7 +131,6 @@ export default function SchemesPage() {
                         Help save small amounts monthly and get a lump sum at
                         maturity.
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -164,7 +162,6 @@ export default function SchemesPage() {
                         Offer fixed-income returns for short to long-term
                         investments
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -195,7 +192,6 @@ export default function SchemesPage() {
                       <td className="px-6 py-4">
                         Promote long-term savings with tax benefits.
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -226,7 +222,6 @@ export default function SchemesPage() {
                       <td className="px-6 py-4">
                         Provide guaranteed returns with tax-saving benefits
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -258,7 +253,6 @@ export default function SchemesPage() {
                         Offer secure investment doubling deposits in a fixed
                         period
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -288,7 +282,6 @@ export default function SchemesPage() {
                         Secure girl children’s future (education and marriage
                         expenses)
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -318,7 +311,6 @@ export default function SchemesPage() {
                         Provide regular income and secure investments
                         post-retirement
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -349,7 +341,6 @@ export default function SchemesPage() {
                       <td className="px-6 py-4">
                         Ensure pension and social security after retirement
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -380,7 +371,6 @@ export default function SchemesPage() {
                       <td className="px-6 py-4">
                         Provide low-cost life insurance with high returns
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -441,7 +431,6 @@ export default function SchemesPage() {
                       <td className="px-6 py-4">
                         Provide digital banking and doorstep services
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -471,7 +460,6 @@ export default function SchemesPage() {
                         Enable safe and fast domestic/international money
                         transfers
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -503,7 +491,6 @@ export default function SchemesPage() {
                         Ensure subsidies and benefits reach eligible recipients
                         directly
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -532,7 +519,6 @@ export default function SchemesPage() {
                       <td className="px-6 py-4">
                         Empower women through savings and financial independence
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -564,7 +550,6 @@ export default function SchemesPage() {
                         Provide short-term loans for agriculture, animal
                         husbandry, and allied activities
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -594,7 +579,6 @@ export default function SchemesPage() {
                         Enable borrowing against the value of National Savings
                         Certificates or Kisan Vikas Patra as security
                       </td>
-                    
                     </tr>
                     <tr className="bg-[#f2f7fb] border-b border-gray-400 hover:bg-gray-50">
                       <td className="w-4 p-4">
@@ -624,7 +608,6 @@ export default function SchemesPage() {
                         Offer short-term credit by pledging Recurring Deposit
                         (RD) or Time Deposit (TD)
                       </td>
-                    
                     </tr>
                   </tbody>
                 </table>
