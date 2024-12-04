@@ -63,7 +63,7 @@ export default function SuccessRateChart() {
   }, []);
 
   return (
-    <div className="block w-max p-6 border rounded-lg shadow-md flex flex-row ">
+    <div className="block w-max p-3 border rounded-lg shadow-md flex flex-row ">
         <div ref={chartRef} id="donut-chart" aria-label="Success Rate Donut Chart"></div>
         <div className="flex flex-col items-center">
         <h2 className="text-xl font-semibold text-purple-800 p-6 ">
